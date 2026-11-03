@@ -1,0 +1,19 @@
+{
+  "name": "browseruse",
+  "description": "A plugin for controlling remote browser sessions in Browser Use Cloud.",
+  "summary": "Browse and interact with web pages via Browser Use",
+  "config": {
+    "api_key": {
+      "description": "Browser Use API key used to create remote browsers.",
+      "required": true
+    },
+    "proxy_country_code": {
+      "description": "Two-letter country code for the Browser Use proxy (for example, 'us'). Leave empty to use a direct connection.",
+      "required": false
+    }
+  },
+  "init": {
+    "entrypoint": "init.py",
+    "async": true
+  }
+}

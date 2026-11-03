@@ -1,0 +1,22 @@
+{
+  "name": "browse",
+  "description": "Opens a page in a remote Browser Use Cloud browser, optionally performs actions on it, and returns the page text, its HTML, or a screenshot. Use this for pages that need JavaScript or user interaction; prefer a simpler fetch tool for static pages.",
+  "entrypoint": "run.py",
+  "parameters": {
+    "url": {
+      "type": "string",
+      "description": "The URL of the page to open."
+    },
+    "actions": {
+      "type": "array",
+      "description": "Optional actions to perform after the page loads, in order. Each item is an object with an 'action' key: {'action': 'click', 'selector': '...'}, {'action': 'fill', 'selector': '...', 'value': '...'}, {'action': 'press', 'selector': '...', 'key': '...'}, {'action': 'wait_for', 'selector': '...'}, or {'action': 'evaluate', 'expression': '...'}. Selectors use Playwright syntax. The evaluate expression is JavaScript evaluated in the page.",
+      "items": {
+        "type": "object"
+      }
+    },
+    "output": {
+      "type": "string",
+      "description": "What to return: 'text' for the page's visible text (the default), 'html' for the full HTML written to a file, or 'screenshot' for a full-page PNG written to a file."
+    }
+  }
+}
