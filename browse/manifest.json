@@ -2,6 +2,7 @@
   "name": "browse",
   "description": "Opens a page in a remote Browser Use Cloud browser, optionally performs actions on it, and returns the page text, its HTML, or a screenshot. Use this for pages that need JavaScript or user interaction; prefer a simpler fetch tool for static pages.",
   "entrypoint": "run.py",
+  "async": true,
   "parameters": {
     "url": {
       "type": "string",

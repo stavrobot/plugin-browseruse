@@ -31,4 +31,4 @@ Opens a URL, runs an optional list of actions in order, and returns the final UR
 - `actions` (optional): a list of steps. Each step is `click`, `fill`, `press`, `wait_for` or `evaluate`, with a selector, a value, a key or a JavaScript expression. The results of `evaluate` steps are returned.
 - `output` (optional): `text` (the default) returns the visible text, up to 20,000 characters. `html` returns the page HTML as a file. `screenshot` returns a full-page PNG.
 
-Each call must finish in about 25 seconds. The browser does not stay open between calls, so put all the steps for one task in one call.
+Each call must finish in about 50 seconds, and the result arrives as a follow-up message. The browser does not stay open between calls, so put all the steps for one task in one call.

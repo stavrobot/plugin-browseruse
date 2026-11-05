@@ -24,10 +24,14 @@ from playwright.sync_api import sync_playwright  # noqa: E402
 
 API_BASE_URL = "https://api.browser-use.com/api/v4"
 
-DEADLINE_SECONDS = 25.0
+# The tool is async in its manifest because the plugin runner kills sync tools
+# at 30 s, which leaves no room for a 30 s page load. The deadline must stay
+# under the browser's one-minute Browser Use timeout (timeout: 1) and the
+# runner's 300 s async limit, so the watchdog fires before either of them.
+DEADLINE_SECONDS = 50.0
 STOP_RESERVE_SECONDS = 3.0
 CREATE_TIMEOUT_SECONDS = 8.0
-NAVIGATION_TIMEOUT_SECONDS = 15.0
+NAVIGATION_TIMEOUT_SECONDS = 30.0
 ACTION_TIMEOUT_SECONDS = 5.0
 STOP_TIMEOUT_SECONDS = 2.5
 MAX_TEXT_CHARACTERS = 20_000
