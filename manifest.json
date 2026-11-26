@@ -9,7 +9,8 @@
     },
     "proxy_country_code": {
       "description": "Two-letter country code for the Browser Use proxy (for example, 'us'). Leave empty to use a direct connection.",
-      "required": false
+      "required": false,
+      "secret": false
     }
   },
   "init": {
